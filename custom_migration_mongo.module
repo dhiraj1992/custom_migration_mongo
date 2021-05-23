@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_migration_mongo.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_migration_mongo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_migration_mongo module.
+    case 'help.page.custom_migration_mongo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Create custom entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_migration_mongo_theme() {
+  $theme = [];
+  $theme['locations'] = [
+    'render element' => 'elements',
+    'file' => 'locations.page.inc',
+    'template' => 'locations',
+  ];
+  $theme['locations_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'locations.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function custom_migration_mongo_theme_suggestions_locations(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#locations'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'locations__' . $sanitized_view_mode;
+  $suggestions[] = 'locations__' . $entity->bundle();
+  $suggestions[] = 'locations__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'locations__' . $entity->id();
+  $suggestions[] = 'locations__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

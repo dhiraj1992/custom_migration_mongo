@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.locations.city.field_coordinate
+    - field.field.locations.city.field_population
+    - field.field.locations.city.field_state
+    - custom_migration_mongo.locations_type.city
+id: locations.city.default
+targetEntityType: locations
+bundle: city
+mode: default
+content:
+  field_coordinate:
+    weight: -3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_population:
+    weight: -2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_state:
+    weight: -1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  name:
+    label: inline
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

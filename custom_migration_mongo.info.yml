@@ -1,0 +1,7 @@
+name: 'Custom Migration Mongo'
+type: module
+description: 'Create custom entity'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - migrate_tools

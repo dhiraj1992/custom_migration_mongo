@@ -1,0 +1,22 @@
+# Location routing definition
+
+entity.locations.canonical:
+  route_name: entity.locations.canonical
+  base_route: entity.locations.canonical
+  title: 'View'
+
+entity.locations.edit_form:
+  route_name: entity.locations.edit_form
+  base_route: entity.locations.canonical
+  title: 'Edit'
+
+entity.locations.version_history:
+  route_name: entity.locations.version_history
+  base_route: entity.locations.canonical
+  title: 'Revisions'
+
+entity.locations.delete_form:
+  route_name:  entity.locations.delete_form
+  base_route:  entity.locations.canonical
+  title: Delete
+  weight: 10

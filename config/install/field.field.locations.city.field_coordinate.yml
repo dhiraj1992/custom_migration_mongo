@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.locations.field_coordinate
+    - custom_migration_mongo.locations_type.city
+id: locations.city.field_coordinate
+field_name: field_coordinate
+entity_type: locations
+bundle: city
+label: Coordinate
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

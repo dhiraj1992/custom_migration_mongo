@@ -1,0 +1,17 @@
+
+# Location menu items definition
+entity.locations.collection:
+  title: 'Location list'
+  route_name: entity.locations.collection
+  description: 'List Location entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Location type menu items definition
+entity.locations_type.collection:
+  title: 'Location type'
+  route_name: entity.locations_type.collection
+  description: 'List Location type (bundles)'
+  parent: system.admin_structure
+  weight: 99

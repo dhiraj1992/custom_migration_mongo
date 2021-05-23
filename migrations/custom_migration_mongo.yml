@@ -1,0 +1,9 @@
+id: custom_migration_mongo
+label: 'Mongo TO Entity migration'
+source:
+  plugin: fetch_mongo_data
+  ids:
+    _id:
+      type: string
+destination:
+  plugin: location

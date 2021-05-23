@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.locations.field_population
+    - custom_migration_mongo.locations_type.city
+id: locations.city.field_population
+field_name: field_population
+entity_type: locations
+bundle: city
+label: Population
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

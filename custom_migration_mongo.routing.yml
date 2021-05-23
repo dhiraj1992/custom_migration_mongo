@@ -1,0 +1,22 @@
+custom_migration_mongo.mongo_db_credentials_form:
+  path: '/admin/config/custom_migration_mongo/mongoconnectiondetails'
+  defaults:
+    _form: '\Drupal\custom_migration_mongo\Form\MongoConnectionDetails'
+    _title: 'Mongo Connection Credential'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+custom_migration_mongo.custom_migration_mongo_map_form:
+  path: '/admin/config/custom_migration_mongo/mongotoentitymap/{entity}/{bundle}'
+  defaults:
+    _form: '\Drupal\custom_migration_mongo\Form\MongoToLocationMapForm'
+    _title: 'Map Entity to Mongo DB collection'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    parameters:
+      entity:
+        type: string
+      bundle:
+        type: string
