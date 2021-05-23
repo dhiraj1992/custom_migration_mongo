@@ -51,7 +51,7 @@ class EntityLocationType extends DestinationBase implements ContainerFactoryPlug
     $this->entityFieldManager = $entityFieldManager;
     $this->entityTypeManager = $entityTypeManager;
     $this->supportsRollback = TRUE;
-    $this->fields = array_diff(array_keys($this->entityFieldManager->getFieldStorageDefinitions('location', 'city')), $this->getBaseFields());
+    $this->fields = array_diff(array_keys($this->entityFieldManager->getFieldStorageDefinitions('locations', 'city')), $this->getBaseFields());
   }
   
     /**

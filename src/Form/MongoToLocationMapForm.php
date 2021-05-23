@@ -105,6 +105,7 @@ class MongoToLocationMapForm extends ConfigFormBase {
       'created',
       'changed',
       'revision_translation_affected',
+      'revision_log_message',
       'default_langcode',
       'revision_default',
     ];
